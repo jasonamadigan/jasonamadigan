@@ -17,6 +17,10 @@ These are a few proof-of-concept projects where I’m testing AI’s practical l
 
 * **Config Auditor**: A multi-step flow using LangGraph to see if an LLM can reliably spot security holes in network configs before they get deployed. While LangChain worked for basic RAG, it became evident quickly that branching or looping workflows required LangGraph for this type of use case.
 
+* **Hardware Benchmarking**: I developed Python telemetry tools to baseline CPU/GPU utilization and token-generation velocity for local LLM inference. This suite measures tok/s, latency, and thermals specifically for an AMD 7900 XTX using the ROCm stack, helping me understand the actual hardware cost of inference beyond just the "it works" stage.
+
+* **Applied Inference & RAG**: I built and containerized a local inference cluster using K3s, Docker, and FastAPI. I used this infrastructure to deploy a secure, local RAG pipeline (LangChain and ChromaDB) for querying operational runbooks. This simulates an environment with strict operational and privacy requirements where data cannot leave the local network.
+
 ---
 
 ### 🛠️ Development Stack
@@ -24,7 +28,7 @@ These are a few proof-of-concept projects where I’m testing AI’s practical l
 #### 💻 Core Technologies
 * **Languages:** `Python`
 * **AI Frameworks:** `LangChain`, `LangGraph`, `PyTorch`, `Ollama`
-* **Automation:** `Ansible`
+* **Automation:** `Ansible`, `Docker`, `K3s`
 
 #### 🏗️ Infrastructure & Compute
 * **Local Environment:** Linux/Windows running on an AMD Radeon™ RX 7900 XTX
